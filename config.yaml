@@ -1,0 +1,62 @@
+# config.yaml
+
+# --- Application Settings ---
+app:
+  bot_name: "Zedeke"
+
+# --- Bybit API Settings ---
+bybit:
+  testnet: True
+  api_key_env: "BYBIT_API_KEY"
+  api_secret_env: "BYBIT_API_SECRET"
+  
+  symbol: "BTCUSDT"
+  interval: "15" 
+  limit: 200     
+  
+  api_retries: 3
+  api_retry_delay_seconds: 5
+
+# --- Trading Strategy Profiles ---
+strategy_profiles:
+  ma_rsi_default: 
+    module_path: "strategies.example_strategy_ma_rsi" 
+    class_name: "MA_RSI_Strategy"                  
+    parameters:                                    
+      short_ma_period: 9
+      long_ma_period: 21
+      rsi_period: 14
+      rsi_oversold: 30
+      rsi_overbought: 70
+  
+  ma_rsi_aggressive: 
+    module_path: "strategies.example_strategy_ma_rsi"
+    class_name: "MA_RSI_Strategy"
+    parameters:
+      short_ma_period: 5
+      long_ma_period: 13
+      rsi_period: 10
+      rsi_oversold: 25
+      rsi_overbought: 75
+
+# --- Active Strategy Selection ---
+active_strategy_profile_name: "ma_rsi_aggressive" 
+
+# --- Risk Management Settings ---
+risk_management:
+  stop_loss_pct: 0.01   
+  take_profit_pct: 0.02 
+  price_precision: 4    
+
+# --- Telegram Notification Settings ---
+telegram:
+  bot_token_env: "TELEGRAM_BOT_TOKEN"
+  chat_id: "7434973681" 
+
+# --- Scheduling Settings ---
+schedule_interval_minutes: 3 
+
+# --- Logging Configuration ---
+logging:
+  log_file: "logs/signal_bot.log" # Relative to project root where main_bot.py is
+  log_level: "INFO"

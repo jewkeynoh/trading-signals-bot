@@ -1,0 +1,12 @@
+# requirements.txt
+pybit==5.4.0
+pandas==1.5.3
+numpy==1.23.5
+pandas-ta==0.3.14b0
+python-telegram-bot==20.8
+PyYAML==6.0.1
+python-dotenv==1.0.0
+schedule==1.2.0
+pydantic==2.5.3
+requests==2.31.0
+tzdata

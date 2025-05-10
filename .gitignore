@@ -1,0 +1,37 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environment
+venv/
+*.venv
+env/
+ENV/
+
+# Configuration secrets
+.env
+*.env
+
+# Logs
+logs/
+*.log
+
+# Data files (if any, e.g., SQLite if you add it later)
+# data/
+# *.db
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# IDE files (examples)
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Webdriver cache (if you ever add selenium)
+/Users/*/.wdm/
+/home/*/.wdm/
+C:/Users/*/.wdm/
